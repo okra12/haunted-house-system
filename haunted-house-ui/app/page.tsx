@@ -48,7 +48,7 @@ export default function Home() {
 
     setIsPending(true); 
     try {
-      const response = await fetch("http://10.22.242.115:8000/tickets", {
+      const response = await fetch("https://haunted-house-system.onrender.com/tickets", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

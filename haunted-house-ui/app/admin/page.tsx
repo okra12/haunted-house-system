@@ -7,7 +7,7 @@ export default function AdminPage() {
   // データの取得処理
   const fetchTickets = async () => {
     try {
-      const res = await fetch("http://10.22.242.115:8000/admin/tickets");
+      const res = await fetch("https://haunted-house-system.onrender.com/admin/tickets");
       if (res.ok) {
         const data = await res.json();
         setTickets(data);
