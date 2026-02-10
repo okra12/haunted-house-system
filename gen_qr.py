@@ -1,14 +1,13 @@
 import qrcode
 import os
 
-# 10.22.242.115 を指定
-ip_address = "10.22.242.115" 
-port = "3000"
-url = f"http://{ip_address}:{port}"
+# --- 修正ポイント：URLを本番用の一つに絞る ---
+# ローカルIPやポート番号はもう不要です
+url = "https://haunted-house-system.vercel.app"
 
 qr = qrcode.QRCode(
     version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_H,
+    error_correction=qrcode.constants.ERROR_CORRECT_H, # 汚れに強い設定
     box_size=10,
     border=4,
 )
@@ -18,4 +17,4 @@ qr.make(fit=True)
 img = qr.make_image(fill_color="black", back_color="white")
 img.save("reception_qr.png")
 
-print(f"QRコードを生成しました: {url}")
+print(f" 本番用QRコードを生成しました: {url}")
